@@ -1,5 +1,5 @@
-#ifndef BleController_h
-#define BleController_h
+#ifndef BleDevice_h
+#define BleDevice_h
 
 #include <Arduino.h>
 #include <SoftwareSerial.h>
@@ -7,14 +7,13 @@
 #define BLE_STATE_PIN 5
 #define LED_PIN 4
 
-class BleController{
+class BleDevice{
   private:
     SoftwareSerial *blePort;
 
   public:
-    BleController();
-    void sendData(boolean isTouched, int beatAvg, int tempAvg);
-    void showState();
+    BleDevice();
+    void sendData(String data);
     void begin();
 };
 #endif
